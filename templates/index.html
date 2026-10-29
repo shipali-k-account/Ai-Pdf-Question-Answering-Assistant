@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuMind | AI PDF Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <h2>✦ DocuMind</h2>
+            <p class="subtitle">AI PDF Assistant</p>
+
+            <label for="pdfInput" class="upload">
+                <span class="upload-icon">↑</span>
+                <strong>Upload your PDF</strong>
+                <small>Click to choose a document</small>
+            </label>
+            <input type="file" id="pdfInput" accept=".pdf" hidden>
+
+            <p id="status">No document uploaded</p>
+
+            <div class="sidebar-bottom">✦ Your personal AI reader</div>
+        </aside>
+
+        <main class="main">
+            <header>
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL AI READER</p>
+                    <h1>Ask your document.</h1>
+                </div>
+                <span class="badge">✦ RAG Assistant</span>
+            </header>
+
+            <section id="chat" class="chat">
+                <div id="welcome" class="welcome">
+                    <div class="hero-icon">✦</div>
+                    <h2>Your documents,<br>made understandable.</h2>
+                    <p>Upload a PDF and ask questions. Get clear answers based on your document.</p>
+
+                    <div class="suggestions">
+                        <button data-question="Summarize this document">✧ Summarize this document</button>
+                        <button data-question="What are the main topics?">◈ Find main topics</button>
+                        <button data-question="Explain this document simply">◎ Explain it simply</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="composer-area">
+                <p id="notice"></p>
+                <form id="questionForm">
+                    <textarea id="questionInput"
+                              placeholder="Upload a PDF to get started..."
+                              rows="1" disabled></textarea>
+                    <button id="sendButton" type="submit" disabled>↑</button>
+                </form>
+                <small class="disclaimer">AI can make mistakes. Verify important information.</small>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
